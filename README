@@ -1,0 +1,7 @@
+This is a project to test some stock analysis techniques using both Python
+and R.  We will begin by creating a simple script to collect curren stock quote
+data and write it to a file.
+
+collect-data.py:
+    Used to collect data on a single stock every two minutes while the markets are open (9:30am - 4:00pm).
+    Set a scheduled task to start this at 9:30am and let it run until 4:00pm
