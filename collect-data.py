@@ -8,7 +8,7 @@ import os
 import time
 from threading import Thread
 
-os.chdir('/home/jacob/Documents/stock-analysis')
+os.chdir('/home/pi/Documents/stock-analysis')
 
 BASE_URL = 'http://download.finance.yahoo.com/d/quotes.csv?s='
 SYM_URL = '%5EDJI+{symbol}&f=sd1t1l1va2abc1ghk3ops7&e=.csv'
