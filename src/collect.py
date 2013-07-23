@@ -26,11 +26,11 @@ def get_data(symbol="SPY"):
             time.sleep(120)
             continue
 
-        if not os.path.exists("data.csv"):
-	    stockdata = open("data.csv", "a")
+        if not os.path.exists("data/%s.csv" % symbol):
+	    stockdata = open("data/%s.csv" % symbol, "a")
 	    stockdata.write(HEADERS)
         else:
-    	    stockdata = open("data.csv", "a")
+    	    stockdata = open("data/%s.csv" % symbol, "a")
 	    stockdata.write(stocks)
 	    stockdata.close()
 	    time.sleep(120)
