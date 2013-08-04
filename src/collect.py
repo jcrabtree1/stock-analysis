@@ -17,7 +17,9 @@ HEADERS = "symbol,date,time,price," + \
           "days high,last trade size,open,previous close,short ratio\n"
 
 def get_data(symbol="SPY"):
-    while True:
+    now = time.localtime()
+    while now.tm_hour < 16:
+        now = time.localtime()
         try:
             stocks = urllib.urlopen(BASE_URL + 
                                     SYM_URL.format(symbol=symbol)).read()
@@ -33,14 +35,8 @@ def get_data(symbol="SPY"):
     	    stockdata = open("data/%s.csv" % symbol, "a")
 	    stockdata.write(stocks)
 	    stockdata.close()
-	    time.sleep(120)
+	    time.sleep(300)
 
-# Start the get_data process as a daemon thread.
-t = Thread(target=get_data)
-t.daemon = True
-t.start()
-
-# If the script starts at 9:30am, then 23401sec should take us to 4:00pm
-# Once the script finishes sleeping, it will automatically quit.
-time.sleep(23401)
+if __name__ == '__main__':
+    get_data()
 
