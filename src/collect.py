@@ -12,7 +12,7 @@ os.chdir('/home/pi/Documents/stock-analysis')
 
 BASE_URL = 'http://download.finance.yahoo.com/d/quotes.csv?s='
 SYM_URL = '%5EDJI+{symbol}&f=sd1t1l1va2abc1ghk3ops7&e=.csv'
-HEADERS = "symbol,last trade date,last trade time,last trade price," + \
+HEADERS = "symbol,date,time,price," + \
           "volume,average daily volume,ask,bid,change,days low," + \
           "days high,last trade size,open,previous close,short ratio\n"
 
